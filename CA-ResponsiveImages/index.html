@@ -5,28 +5,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>repl.it</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css"/>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background: gray;
+      background: #fff;
+      margin: 0;
     }
 
     .container {
+      border: 6px solid #757777;
       display: flex;
       width: 100%;
-      background-color: #fff;
+      background: #eee;
       flex-wrap: wrap;
-      gap: 2%
-        /*wrap flex items to a new row if not enough space */
+      /*wrap flex items to a new row if not enough space */
     }
 
     /* flex item of 20% per item */
     .flex-item {
-      padding: 2%;
-      flex-grow: 1;
-      flex-basis: 15%;
-      /* 15% for borders*/
-
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      height: 250px;
+      flex: 0 0 20%;
       display: flex;
       flex-direction: column;
       /* so child elements can use flexbox stuff too! */
@@ -48,12 +53,16 @@
     }
 
     .flex-info {
-      margin-top: auto;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      z-index: 2;
+      color: white;
     }
 
     @media (max-width: 920px) {
       .flex-item {
-        flex: 1 21%;
+        flex: 0 0 30%;
       }
 
       /* This is a flex shorthand */
@@ -67,77 +76,51 @@
 
     @media (max-width: 600px) {
       .flex-item {
-        flex: 1 1 48%;
-        /* two columns (≈ 48% + gap) */
-      }
-
-      .container {
-        gap: 4%;
+        flex: 0 0 48%;
       }
     }
 
     @media (max-width: 420px) {
       .flex-item {
-        flex: 1 1 100%;
+        flex: 0 0 48%;
       }
-    }
-
-    img {
-      width: 400px;
     }
   </style>
 </head>
 
 <body>
   <section class="container">
-    <div class="flex-item">
-      <div class="flex-img">
-        <img src="https://picsum.photos/400/400">
-      </div>
+    <div class="flex-item" style="background-image:url('https://picsum.photos/400/400')">
       <div class="flex-info">
         <h4>Some info</h4>
         <p>Some meaningful info</p>
       </div>
     </div>
-    <div class="flex-item">
-      <div class="flex-img">
-        <img src="https://picsum.photos/400/400">
-      </div>
+    <div class="flex-item" style="background-image:url('https://picsum.photos/400/400')">
       <div class="flex-info">
         <h4>Some info</h4>
         <p>Some meaningful info</p>
       </div>
     </div>
-    <div class="flex-item">
-      <div class="flex-img">
-        <img src="https://picsum.photos/400/400">
-      </div>
+    <div class="flex-item" style="background-image:url('https://picsum.photos/400/400')">
       <div class="flex-info">
         <h4>Some info</h4>
         <p>Some meaningful info</p>
       </div>
     </div>
-    <div class="flex-item">
-      <div class="flex-img">
-        <img src="https://picsum.photos/400/400">
-      </div>
+    <div class="flex-item" style="background-image:url('https://picsum.photos/400/400')">
       <div class="flex-info">
         <h4>Some info</h4>
         <p>Some meaningful info</p>
       </div>
     </div>
-    <div class="flex-item">
-      <div class="flex-img">
-        <img src="https://picsum.photos/400/400">
-      </div>
+    <div class="flex-item" style="background-image:url('https://picsum.photos/400/400')">
       <div class="flex-info">
         <h4>Some info</h4>
         <p>Some meaningful info</p>
       </div>
     </div>
   </section>
-
-
 </body>
 
 </html>
